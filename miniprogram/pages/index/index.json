@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "list": "plugin://myPlugin/list",
+    "win_video": "plugin://myPlugin/win_video"
+  }
+}

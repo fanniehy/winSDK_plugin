@@ -1,0 +1,7 @@
+{
+  "publicComponents": {
+    "list": "components/list/list",
+    "win_video": "components/video/video"
+  },
+  "main": "index.js"
+}

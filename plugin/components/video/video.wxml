@@ -1,0 +1,12 @@
+<view class="win_video">
+  <video
+    id="myVideo"
+    src="{{videoUrl}}"
+    controls
+    autoplay
+    poster="{{mainImage}}"
+    title="{{title}}"
+    bindtap="adClick"
+    bindtimeupdate="progressupdate"
+  />
+</view>
