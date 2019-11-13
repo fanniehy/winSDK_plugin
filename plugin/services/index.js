@@ -27,10 +27,22 @@ export async function getVideoUrl(param) {
 };
 
 // 上报
-export async function eventReport(url) {
-  return new Promise((resolve, reject) => {
+export async function eventReport(url, position = {
+  x1: 20,
+  x2: 10,
+  y1: 20,
+  y2: 10,
+  is_dl: new Date().getTime()
+}) {
+  const regArr = ['x1', 'x2', 'y1', 'y2', 'is_dl'];
+  let reportUrl = url;
+  regArr.forEach(item => {
+    const replaceText = `${item}=\\w+`;
+    reportUrl = reportUrl.replace(new RegExp(replaceText, 'g'), `${item}=${position[item]}`);
+  })
+  return new Promise((resolve) => {
     wx.request({
-      url,
+      url: reportUrl,
       success: () => {
         resolve('success');
       },

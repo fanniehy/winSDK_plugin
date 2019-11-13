@@ -26,8 +26,9 @@ Component({
     closeAd: function () {
       this.triggerEvent("closeTap", { isShow: false });
     },
-    adTap: function () {
-      this.triggerEvent('adTap');
+    adTap: function (event) {
+      const { detail } = event;
+      this.triggerEvent('adTap', { position: detail });
     }
   }
 })

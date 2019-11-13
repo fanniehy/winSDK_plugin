@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "video-container": "plugin-private://wx3adc789ef338757a/components/video/video"
+  }
 }

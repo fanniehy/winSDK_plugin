@@ -1,15 +1,5 @@
 <view class="win_video">
-  <video
-    id="myVideo"
-    src="{{videoUrl}}"
-    controls
-    poster="{{endAction}}"
-    title="{{title}}"
-    bindtimeupdate="progressupdate"
-    bindpause="vdPause"
-    bindplay="vdResume"
-    bindended="vdEnded"
-  >
+  <video id="myVideo" src="{{videoUrl}}" controls="{{false}}" poster="{{endAction}}" enable-play-gesture controls autoplay title="{{title}}" bindtimeupdate="progressupdate" bindpause="vdPause" bindplay="vdResume" bindended="vdEnded">
     <view wx:if="{{isShow}}">
       <win-adimage-tag endAction="{{endAction}}" bind:closeTap="closeAd" bind:adTap="adClick"></win-adimage-tag>
     </view>

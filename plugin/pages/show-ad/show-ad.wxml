@@ -1,1 +1,4 @@
 <!-- <web-view src="https://mp.weixin.qq.com/"></web-view> -->
+<view>
+  <video-container></video-container>
+</view>

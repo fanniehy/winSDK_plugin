@@ -1,3 +1,5 @@
 <view class="index_class">
-  <win_video bindtap="videoTap" class="video_play_class" />
+  <navigator url="plugin://myPlugin/show-ad">
+    Go to pages/show-ad
+  </navigator>
 </view>
