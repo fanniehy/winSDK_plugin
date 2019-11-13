@@ -1,3 +1,3 @@
 <view class="index_class">
-  <win_video class="video_play_class" />
+  <win_video bindtap="videoTap" class="video_play_class" />
 </view>

@@ -3,10 +3,15 @@
     id="myVideo"
     src="{{videoUrl}}"
     controls
-    autoplay
-    poster="{{mainImage}}"
+    poster="{{endAction}}"
     title="{{title}}"
-    bindtap="adClick"
     bindtimeupdate="progressupdate"
-  />
+    bindpause="vdPause"
+    bindplay="vdResume"
+    bindended="vdEnded"
+  >
+    <view wx:if="{{isShow}}">
+      <win-adimage-tag endAction="{{endAction}}" bind:closeTap="closeAd" bind:adTap="adClick"></win-adimage-tag>
+    </view>
+  </video>
 </view>

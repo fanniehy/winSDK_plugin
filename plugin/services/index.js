@@ -26,11 +26,14 @@ export async function getVideoUrl(param) {
   })
 };
 
-// 点击上报
+// 上报
 export async function eventReport(url) {
-  return new Promise(() => {
+  return new Promise((resolve, reject) => {
     wx.request({
       url,
+      success: () => {
+        resolve('success');
+      },
     })
   })
 }

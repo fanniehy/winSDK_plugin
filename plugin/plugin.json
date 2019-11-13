@@ -3,5 +3,8 @@
     "list": "components/list/list",
     "win_video": "components/video/video"
   },
+  "pages": {
+    "show-ad": "pages/show-ad/show-ad"
+  },
   "main": "index.js"
 }
