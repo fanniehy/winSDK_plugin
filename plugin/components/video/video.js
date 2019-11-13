@@ -116,8 +116,7 @@ Component({
   methods: {
     // 广告关闭
     closeAd: function(e) {
-      console.log('广告关闭', e);
-      this.videoContext.play();
+      console.log('图片关闭');
       this.setData({
         ...e.detail
       });
@@ -145,7 +144,9 @@ Component({
         is_dl: new Date().getTime()
       }));
       // 点击上报
-      Promise.all(clickReport);
+      Promise.all(clickReport).then((results) => {
+        console.log(results);
+      });
     },
     // 视频暂停
     vdPause: function(e) {
