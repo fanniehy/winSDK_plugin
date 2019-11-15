@@ -1,6 +1,8 @@
 {
   "usingComponents": {
     "list": "plugin://myPlugin/list",
-    "win_video": "plugin://myPlugin/win_video"
+    "win-fullscreen": "plugin://myPlugin/win-fullscreen",
+    "win-tablescreen": "plugin://myPlugin/win-tablescreen",
+    "win-streamerscreen": "plugin://myPlugin/win-streamerscreen"
   }
 }

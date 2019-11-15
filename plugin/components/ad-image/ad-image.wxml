@@ -1,7 +1,5 @@
 <!--plugin/components/ad-image/ad-image.wxml-->
 <cover-view class="outside_cover_view">
   <cover-image bindtap="adTap" src="{{endAction}}"></cover-image>
-  <cover-view>
-    <button class="cancelButton" style="padding: 0px 10px;" size="mini" bindtap="closeAd" hover-class="other-button-hover">关闭</button>
-  </cover-view>
+  <button class="cancelButton" style="padding: 0px 10px;" bindtap="closeAd" hover-class="other-button-hover">关闭</button>
 </cover-view>

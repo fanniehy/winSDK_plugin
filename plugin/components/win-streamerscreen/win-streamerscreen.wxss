@@ -1,0 +1,90 @@
+/* plugin/components/win-streamerscreen/win-streamerscreen.wxss */
+.container {
+  width: 100%;
+  height: 80px;
+  position: absolute;
+  bottom: 0;
+  z-index: 9999999;
+}
+.container image {
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  bottom: 0;
+}
+
+.page-body{
+  padding-top: 60rpx;
+}
+.page-section{
+  width: 100%;
+  margin-bottom: 60rpx;
+}
+.page-section_center{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.page-section:last-child{
+  margin-bottom: 0;
+}
+.page-section-gap{
+  box-sizing: border-box;
+  padding: 0 30rpx;
+}
+.page-section-spacing{
+  position: fixed;
+  bottom: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+.page-section-title{
+  font-size: 28rpx;
+  color: #999999;
+  margin-bottom: 10rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+.page-section-gap .page-section-title{
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.demo-text-1{
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-color: #1AAD19;
+  color: #FFFFFF;
+  font-size: 36rpx;
+}
+.demo-text-2{
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-color: #2782D7;
+  color: #FFFFFF;
+  font-size: 36rpx;
+}
+.demo-text-3{
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(222, 243, 31);
+  color: #353535;
+  font-size: 36rpx;
+}
+.swiper-item{
+  display: block;
+  height: 100%;
+}
+.swiper-item .swiper-title {
+  display: block;
+  font-size: 14px;
+  line-height: 38px;
+}
+.swiper-item .swiper-text {
+  display: block;
+  font-size: 12px;
+  line-height: 20px;
+}

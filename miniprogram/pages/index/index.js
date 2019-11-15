@@ -1,13 +1,14 @@
 var plugin = requirePlugin("myPlugin");
 Page({
+  data: {
+    screenType: '',
+  },
   onLoad: function() {
     plugin.getData()
   },
-  videoTap: function () {
-    plugin.videoClick_report();
-    // wx.navigateTo({
-    //   url: 'plugin://myPlugin/show-ad',
-    // });
-    plugin.videoClick_report();
-  }
+  showScreen: function (event) {
+    this.setData({
+      screenType: event.currentTarget.dataset.screenType
+    });
+  },
 })

@@ -1,5 +1,23 @@
 <view class="index_class">
-  <navigator url="plugin://myPlugin/show-ad">
-    Go to pages/show-ad
+  <navigator url="plugin://myPlugin/win-fullscreen-page">
+    Go to pages/show-fullscreen
   </navigator>
+  <block wx:if="{{screenType === 'full'}}">
+    <win-fullscreen></win-fullscreen>
+  </block>
+  <block wx:elif="{{screenType === 'table'}}">
+    <win-tablescreen></win-tablescreen>
+  </block>
+  <block wx:elif="{{screenType === 'streamer'}}">
+    <win-streamerscreen></win-streamerscreen>
+  </block>
+  <button size="mini" bindtap="showScreen" data-screen-type="full">check fullscreen ads</button>
+  <button size="mini" bindtap="showScreen" data-screen-type="table">check tablescreen ads</button>
+  <button style="display: block" size="mini" bindtap="showScreen" data-screen-type="streamer">check streamerscreen ads</button>
+  <button size="mini" bindtap="showScreen" data-screen-type="full">check fullscreen ads</button>
+  <button size="mini" bindtap="showScreen" data-screen-type="table">check tablescreen ads</button>
+  <button style="display: block" size="mini" bindtap="showScreen" data-screen-type="streamer">check streamerscreen ads</button>
+  <button size="mini" bindtap="showScreen" data-screen-type="full">check fullscreen ads</button>
+  <button size="mini" bindtap="showScreen" data-screen-type="table">check tablescreen ads</button>
+  <button size="mini" bindtap="showScreen" data-screen-type="streamer">check streamerscreen ads</button>
 </view>

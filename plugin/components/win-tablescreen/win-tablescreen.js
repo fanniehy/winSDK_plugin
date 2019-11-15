@@ -1,3 +1,4 @@
+// plugin/components/win-tablescreen/win-tablescreen.js
 import {
   getLocation,
   getNetworkType,
@@ -6,6 +7,7 @@ import {
 
 import {
   getNewworType,
+  getOSType,
 } from '../../tools/utils.js';
 
 import {
@@ -14,22 +16,29 @@ import {
 } from '../../services/index.js';
 
 Component({
+  properties: {
+    packageName: String,
+    appVersion: String,
+    slotId: String,
+    openId: String, //充当udid的角色
+  },
   data: {
     list: [],
     isShow: false, //是否显示广告
-    // videoUrl: 'http://ali.cdn.pys5.com/fileTourl/5d40016f.mp4',
-    // endAction: 'http://tang123.oss-cn-shanghai.aliyuncs.com/fileTourl/5b334dc2.jpg',
-    // title: '2019最火清理工具，让你的手机和新的一样',
+    videoUrl: 'http://ali.cdn.pys5.com/fileTourl/5d40016f.mp4',
+    endAction: 'http://tang123.oss-cn-shanghai.aliyuncs.com/fileTourl/5b334dc2.jpg',
+    title: '2019最火清理工具，让你的手机和新的一样',
+    text: '小巧清理工具，加快你的手机运营速度，让你的手机快而不卡',
   },
   lifetimes: {
-    created: function() {
+    created: function () {
       this.videoContext = wx.createVideoContext('myVideo');
       wx.showLoading({
         title: '加载中',
         mask: false,
       });
     },
-    attached: function() {
+    attached: function () {
       Promise.all([getLocation(), getNetworkType(), getSystemInfo()]).then((results) => {
         // 地理位置
         const {
@@ -48,20 +57,24 @@ Component({
           screenHeight,
           platform
         } = results[2];
+        const {
+          packageName = 'winapp',
+          appVersion = '2.3.1',
+          slotId = 'test-001',
+          openId = '866375043630895',
+        } = this.data;
         getVideoUrl({
-          requestId: 'Fqe78eef',
-          slotId: 'test-001',
-          packageName: 'winApp',
-          appVersion: '1.2.5',
+          packageName,
+          appVersion,
+          slotId,
+          udid: openId,
+          requestId: 'Fqe78eef', // 请求id标识一个唯一请求
           network: getNewworType(networkType),
-          imei: '866375043630895',
-          imsi: '1254678',
-          realIp: '223.45.12.1',
           lat,
           lon,
-          locationProvider: 0,
-          wifi: '00:0c:29:99:02:cd',
-          osType: 1,
+          locationProvider: 0, // 默认为网络定位
+          wifi: '00:0c:29:99:02:cd', // 小程序无法获取
+          osType: getOSType(platform),
           scHeight: screenHeight,
           scWidth: screenWidth,
         }).then((res) => {
@@ -97,7 +110,7 @@ Component({
         });
       })
     },
-    detached: function() {
+    detached: function () {
       // 在组件实例被从页面节点树移除时执行
       const {
         tracks: {
@@ -115,14 +128,15 @@ Component({
   },
   methods: {
     // 广告关闭
-    closeAd: function(e) {
+    closeAd: function (e) {
       console.log('图片关闭');
       this.setData({
-        ...e.detail
+        ...e.detail,
+        videoClose: true,
       });
     },
     // 广告被点击
-    adClick: function(e) {
+    adClick: function (e) {
       console.log('广告被点击', e);
       const {
         detail: {
@@ -149,7 +163,7 @@ Component({
       });
     },
     // 视频暂停
-    vdPause: function(e) {
+    vdPause: function (e) {
       console.log('视频暂停', e);
       // 视频暂停
       this.setData({
@@ -167,7 +181,7 @@ Component({
       Promise.all(clickReport);
     },
     // 视频播放
-    vdResume: function(e) {
+    vdResume: function (e) {
       console.log('视频播放', e);
       const {
         tracks: {
@@ -182,7 +196,7 @@ Component({
       Promise.all(adResumeReport);
     },
     // 视频播放结束
-    vdEnded: function(e) {
+    vdEnded: function (e) {
       // 视频播放结束展示广告
       this.setData({
         isShow: true
@@ -197,7 +211,7 @@ Component({
       Promise.all(endedReport);
     },
     // 进度条在变化
-    progressupdate: function(event) {
+    progressupdate: function (event) {
       const {
         detail: {
           currentTime,

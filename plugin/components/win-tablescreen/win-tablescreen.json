@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "win-adimage-tag": "plugin-private://wx3adc789ef338757a/components/ad-image/ad-image"
+  }
+}

@@ -1,0 +1,23 @@
+<!--plugin/components/win-streamerscreen/win-streamerscreen.wxml-->
+<block wx:if="{{streamerToFull}}">
+  <win-fullscreen></win-fullscreen>
+</block>
+<block wx:else>
+  <view class="container">
+    <!-- <navigator url="plugin-private://wx3adc789ef338757a/pages/win-fullscreen-page/win-fullscreen-page">
+    <image bindtap="winadsTap" src="{{endAction}}"></image>
+  </navigator> -->
+    <view class="page-section page-section-spacing swiper">
+      <swiper style="height: 80px" circular="{{true}}" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{background}}" wx:key="*this">
+          <swiper-item bindtap="adsTap">
+            <view class="swiper-item {{item}}">
+              <text class="swiper-title">{{title}}</text>
+              <text class="swiper-text">{{text}}</text>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+</block>

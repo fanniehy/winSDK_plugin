@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "win-fullscreen": "plugin-private://wx3adc789ef338757a/components/win-fullscreen/win-fullscreen"
+  }
+}

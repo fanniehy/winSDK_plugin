@@ -1,0 +1,4 @@
+<!--plugin/pages/win-fullscreen/win-fullscreen.wxml-->
+<view class="ad_container">
+  <video-container></video-container>
+</view>

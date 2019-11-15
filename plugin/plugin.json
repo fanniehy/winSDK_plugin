@@ -1,10 +1,12 @@
 {
   "publicComponents": {
     "list": "components/list/list",
-    "win_video": "components/video/video"
+    "win-tablescreen": "components/win-tablescreen/win-tablescreen",
+    "win-fullscreen": "components/win-fullscreen/win-fullscreen",
+    "win-streamerscreen": "components/win-streamerscreen/win-streamerscreen"
   },
   "pages": {
-    "show-ad": "pages/show-ad/show-ad"
+    "win-fullscreen-page": "pages/win-fullscreen-page/win-fullscreen-page"
   },
   "main": "index.js"
 }

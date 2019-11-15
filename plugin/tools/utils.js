@@ -11,3 +11,13 @@ export function getNewworType (item) {
   }
   return type;
 }
+
+export function getOSType (item) {
+  let type = 1;
+  if (item.toLocaleLowerCase() === 'android') {
+    type = 1;
+  } else {
+    type = 2;
+  }
+  return type;
+}

@@ -1,0 +1,13 @@
+<!--plugin/components/win-fullscreen/win-fullscreen.wxml-->
+<block wx:if="{{!videoClose}}">
+  <view class="container">
+    <view class="win_fullscreen_video">
+      <video id="myVideo" src="{{videoUrl}}" show-fullscreen-btn="{{false}}" show-center-play-btn="{{false}}" enable-play-gesture show-play-btn="{{false}}" controls autoplay show-progress="{{false}}" title="{{title}}" bindtimeupdate="progressupdate" bindpause="vdPause"
+        bindplay="vdResume" bindended="vdEnded">
+        <view class="ad_picture_container" wx:if="{{isShow}}">
+          <win-adimage-tag endAction="{{endAction}}" bind:closeTap="closeAd" bind:adTap="adClick"></win-adimage-tag>
+        </view>
+      </video>
+    </view>
+  </view>
+</block>
