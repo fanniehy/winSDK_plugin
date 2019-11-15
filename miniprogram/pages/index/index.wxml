@@ -6,7 +6,7 @@
     <win-fullscreen></win-fullscreen>
   </block>
   <block wx:elif="{{screenType === 'table'}}">
-    <win-tablescreen></win-tablescreen>
+    <win-tablescreen appVersion="2.3.3"></win-tablescreen>
   </block>
   <block wx:elif="{{screenType === 'streamer'}}">
     <win-streamerscreen></win-streamerscreen>

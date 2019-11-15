@@ -34,8 +34,8 @@ Component({
     autoplay: false,
     interval: 2500,
     duration: 1000,
-    text: '小巧清理工具，加快你的手机运营速度，让你的手机快而不卡',
-    title: '2019最火清理工具，让你的手机和新的一样',
+    // text: '小巧清理工具，加快你的手机运营速度，让你的手机快而不卡',
+    // title: '2019最火清理工具，让你的手机和新的一样',
   },
 
   /**
@@ -120,35 +120,10 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    winStreamerScreen: function (res) {
-      console.log(res);
-    },
-    changeIndicatorDots: function () {
-      this.setData({
-        indicatorDots: !this.data.indicatorDots
-      })
-    },
     adsTap: function () {
       this.setData({
         streamerToFull: true
       });
     },
-    changeAutoplay: function () {
-      this.setData({
-        autoplay: !this.data.autoplay
-      })
-    },
-
-    intervalChange: function (e) {
-      this.setData({
-        interval: e.detail.value
-      })
-    },
-
-    durationChange: function (e) {
-      this.setData({
-        duration: e.detail.value
-      })
-    }
   }
 })

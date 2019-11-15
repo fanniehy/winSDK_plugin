@@ -25,10 +25,10 @@ Component({
   data: {
     list: [],
     isShow: false, //是否显示广告
-    videoUrl: 'http://ali.cdn.pys5.com/fileTourl/5d40016f.mp4',
-    endAction: 'http://tang123.oss-cn-shanghai.aliyuncs.com/fileTourl/5b334dc2.jpg',
-    title: '2019最火清理工具，让你的手机和新的一样',
-    text: '小巧清理工具，加快你的手机运营速度，让你的手机快而不卡',
+    // videoUrl: 'http://ali.cdn.pys5.com/fileTourl/5d40016f.mp4',
+    // endAction: 'http://tang123.oss-cn-shanghai.aliyuncs.com/fileTourl/5b334dc2.jpg',
+    // title: '2019最火清理工具，让你的手机和新的一样',
+    // text: '小巧清理工具，加快你的手机运营速度，让你的手机快而不卡',
   },
   lifetimes: {
     created: function () {
@@ -58,22 +58,22 @@ Component({
           platform
         } = results[2];
         const {
-          packageName = 'winapp',
-          appVersion = '2.3.1',
-          slotId = 'test-001',
-          openId = '866375043630895',
-        } = this.data;
-        getVideoUrl({
           packageName,
           appVersion,
           slotId,
-          udid: openId,
+          openId,
+        } = this.data;
+        console.log(this.data.openId);
+        getVideoUrl({
+          packageName: packageName || 'winapp',
+          appVersion: appVersion || '2.3.1',
+          slotId: slotId || 'test-001',
+          udid: openId || '866375043630895',
           requestId: 'Fqe78eef', // 请求id标识一个唯一请求
           network: getNewworType(networkType),
           lat,
           lon,
           locationProvider: 0, // 默认为网络定位
-          wifi: '00:0c:29:99:02:cd', // 小程序无法获取
           osType: getOSType(platform),
           scHeight: screenHeight,
           scWidth: screenWidth,
