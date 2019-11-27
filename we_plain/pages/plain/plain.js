@@ -21,7 +21,7 @@ Page({
     closePlay: function () {
       console.log('closePlay');
       const fly = this.fly;
-      this.setData({ score: 0, modalHidden: "modal_hide" });
+      this.setData({ score: 0, modalHidden: "modal_hide", showAds: false });
       fly.startGame();
     },
     move: function (event) {

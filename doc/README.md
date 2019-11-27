@@ -8,7 +8,7 @@ winSDK目前支持三钟视频广告模式，全屏广告、插屏广告、横�
 ![](./images/fullScreen.jpg)
  - 插屏广告
  
-![](./images/tableScreen.jpg)
+![](./images/tableScreen.png)
  - 横幅广告
 
 ![](./images/streamerScreen.jpg)
