@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "打飞机",
+    "usingComponents": {
+      "list": "plugin://myPlugin/list",
+      "win-fullscreen": "plugin://myPlugin/win-fullscreen",
+      "win-tablescreen": "plugin://myPlugin/win-tablescreen",
+      "win-streamerscreen": "plugin://myPlugin/win-streamerscreen"
+    }
+}
