@@ -149,3 +149,21 @@ sdk需要根据业务侧提供相应参数来记录广告行为，需传参如�
 ```
 <win-streamerscreen appVersion="appVersion" slotId="slotId" openId="openId" packageName="packageName"></win-streamerscreen>
 ```
+
+### 广告关闭回调
+当前广告播放完毕，用户可操作“关闭”按钮将画面关闭，同时使用方可以继续后续操作，只需给引入插件一个关闭的回调即可
+
+使用方式
+在引用的(.wxml)文件中使用closeAd进行绑定，该函数名固定，使用方不可更改。
+```
+<win-tablescreen appVersion="2.3.3" bind:closeAd="closeEvent"></win-tablescreen>
+```
+closeEvent由使用方自行定义,在（.js）文件中定义为普通事件方法即可
+```
+closePlay: function () {
+  console.log('closePlay');
+  const fly = this.fly;
+  this.setData({ score: 0, modalHidden: "modal_hide" });
+  fly.startGame();
+},
+```

@@ -134,6 +134,7 @@ Component({
         ...e.detail,
         videoClose: true,
       });
+      this.triggerEvent('closeAd');
     },
     // 广告被点击
     adClick: function (e) {
